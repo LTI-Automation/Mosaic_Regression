@@ -1,7 +1,6 @@
 package DriverInitialization;
 
 import Utils.ReadProperties;
-import com.aventstack.extentreports.ExtentTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,7 +18,6 @@ public class DriverInitialization {
 
     public WebDriver driver;
     //public WebDriverWait wait;
-    public static ExtentTest logger;
      @SuppressWarnings("deprecation")
     public WebDriver driverInitialization(String browser) {
 
