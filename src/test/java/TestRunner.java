@@ -16,11 +16,7 @@ import org.testng.annotations.BeforeTest;
 
 public class TestRunner {
 
-    @BeforeTest
-    public void abc(){
 
-        String a = "abc";
-    }
 
 
 
