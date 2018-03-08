@@ -19,6 +19,7 @@ public class TestRunner {
     @BeforeTest
     public void abc(){
 
+        String a = "abc";
     }
 
 
