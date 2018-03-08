@@ -2,6 +2,9 @@ package stepDefinations;
 
 import DriverInitialization.DriverInitialization;
 import PageObjects.LoginPage;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -12,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import paulhammant.ngwebdriver.ByAngular;
@@ -20,6 +24,9 @@ public class LoginPage_StepDef extends DriverInitialization {
 
     public WebDriver driver;
     public LoginPage loginPage;
+    ExtentReports reports;
+    ExtentTest exTests;
+    ExtentHtmlReporter exHtmlReporter;
 
     @Test
     @Parameters("browser")
@@ -32,7 +39,7 @@ public class LoginPage_StepDef extends DriverInitialization {
         Assert.assertTrue(driver.getTitle().equals("MOSAIC"));
     }
 
-
+    @Test
     @When("^I enter \"([^\"]*)\" and \"([^\"]*)\"$")
     public void iEnterUserNameAndPassword(String uname , String password) throws Throwable {
         loginPage=new LoginPage(driver);
@@ -45,5 +52,10 @@ public class LoginPage_StepDef extends DriverInitialization {
     @Then("^I should be able to Landing page of Mosaic$")
     public void i_should_be_able_to_Landing_page_of_Mosaic() throws Throwable {
         System.out.println("I am landing page");
+    }
+
+    @BeforeTest
+    public void reportsSetup(){
+
     }
 }

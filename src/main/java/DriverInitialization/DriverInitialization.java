@@ -40,4 +40,5 @@ public class DriverInitialization {
         }
         return driver;
     }
+
 }
